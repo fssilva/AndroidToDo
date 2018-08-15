@@ -1,6 +1,5 @@
 package com.example.fede.todoapp.screen.splash
 
-import com.example.fede.todoapp.di.DaggerTestPresenterComponent
 import com.example.fede.todoapp.di.TestAppModule
 import com.example.fede.todoapp.screen.UIRouter
 import org.junit.Before
@@ -17,7 +16,7 @@ class SplashScreenPresenterTest {
 
     @Before
     fun setup() {
-        DaggerTestPresenterComponent.builder().appModule(TestAppModule()).build().inject(this)
+        DaggerTestSplashScreenComponent.builder().appModule(TestAppModule()).build().inject(this)
         view = mock(SplashScreenContract.View::class.java)
         sut = SplashScreenPresenter(router)
     }
